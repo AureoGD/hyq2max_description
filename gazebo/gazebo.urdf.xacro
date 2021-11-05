@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<gazebo>
+		<plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control" >
+			<parameters> $(find hyq2max_description)/config/hyq2max.yaml</parameters>
+		</plugin>
+
+      <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+
+        <ros>
+          <!-- Add namespace and remap the default topic -->
+          <namespace>/hyq2max</namespace>
+          <argument> --ros-args --remap odom:=p3d_demo</argument>
+        </ros>
+
+        <!-- Replace camelCase elements with camel_case ones -->
+        <body_name>base_link</body_name>
+        <frame_name>world</frame_name>
+        <update_rate>250</update_rate>
+        <xyz_offset>0 0 0</xyz_offset>
+        <rpy_offset>0 0 0</rpy_offset>
+        <gaussian_noise>0</gaussian_noise>
+
+      </plugin>
+
+	</gazebo>
+</robot>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>hyq2max_description</name>
+  <version>0.0.0</version>
+  <description> This package contains the description (mechanical, kinematic, visual,
+  etc.) of the HyQ2Max robot. The files in this package are parsed and used by
+  a variety of other components. Most users will not interact directly
+  with this package.</description>
+  <maintainer email="aureogd@gmail.com">agkopf</maintainer>
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>xacro</depend>
+  
+  <exec_depend>ros2launch</exec_depend>
+
+  <!-- From gazebo_ros2_control -->
+  <build_depend>control_msgs</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rclcpp_action</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>effort_controllers</exec_depend>
+  <depend>controller_manager</depend>
+  <depend>controller_manager_msgs</depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+  <exec_depend>ros2_controllers</exec_depend>
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>velocity_controllers</exec_depend>
+
+
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  
+  <!--test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend-->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,41 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz
+
+    hyq2max_ros2_impedance_controller:
+     type: hyq2max_ros2_impedance_controller/ImpedanceControl
+  
+hyq2max_ros2_impedance_controller:
+  ros__parameters:
+    joints:
+      - lf_haa_joint
+      - lf_hfe_joint
+      - lf_kfe_joint
+      - rf_haa_joint
+      - rf_hfe_joint
+      - rf_kfe_joint
+      - lh_haa_joint
+      - lh_hfe_joint
+      - lh_kfe_joint
+      - rh_haa_joint
+      - rh_hfe_joint
+      - rh_kfe_joint
+    command_interfaces:
+      - effort
+    
+    state_interfaces:
+      - position
+      - velocity
+      - effort
+
+    joint_impedance_controller_gains:
+      HAA_Kp: 600.0
+      HAA_Kd: 20.0
+      HFE_Kp: 600.0
+      HFE_Kd: 20.0
+      KFE_Kp: 600.0
+      KFE_Kd: 20.0
+    
+    joints_references: [-0.05, 0.65, -1.18, -0.05, 0.65, -1.18, -0.05, -0.65, 1.18, -0.05, -0.65, 1.18]
+    
+    robot_states_feedabck_rate: 100.0 #Hz
